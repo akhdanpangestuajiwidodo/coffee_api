@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
           if (state is HasDataCoffeeState) {
             state.coffeeList.sort((a,b) => a.id.compareTo(b.id));
             return ListView.separated(
+              shrinkWrap: true,
               padding: const EdgeInsets.all(8),
               itemBuilder: (BuildContext context, int index) {
                 return CardCoffeeWidget(state.coffeeList[index]);

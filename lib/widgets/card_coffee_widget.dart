@@ -22,7 +22,7 @@ class _CardCoffeeWidgetState extends State<CardCoffeeWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
-            contentPadding: const EdgeInsets.fromLTRB(15, 10, 25, 10),
+            contentPadding: const EdgeInsets.fromLTRB(15, 10, 25, 8),
             title: Text(widget.coffee.title),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,6 +52,27 @@ class _CardCoffeeWidgetState extends State<CardCoffeeWidget> {
                         },
                       )
                     : Container(),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                Container(
+                  height: 20,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: widget.coffee.ingredients.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        margin: EdgeInsets.only(right: 4.0),
+                        child: Text(
+                          '${widget.coffee.ingredients[index]} ',
+                          style: const TextStyle(color: Colors.deepOrange, fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
             leading: CircleAvatar(
