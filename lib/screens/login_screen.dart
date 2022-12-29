@@ -119,7 +119,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _authenticatedWithPin(context) {
     if (_formKey.currentState!.validate()) {
-      print('pin ${_pinController.text}');
       BlocProvider.of<LoginBloc>(context)
           .add(InputLoginEvent(int.parse(_pinController.text)));
     }
