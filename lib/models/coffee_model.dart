@@ -20,7 +20,7 @@ class CoffeeModel extends Equatable {
         description: json["description"],
         ingredients: List<dynamic>.from(json["ingredients"].map((x) => x)),
         image: json["image"],
-        id: json["id"],
+        id: json["id"].runtimeType == String ? int.parse(json["id"]) : json["id"],
       );
 
   Map<String, dynamic> toJson() => {
