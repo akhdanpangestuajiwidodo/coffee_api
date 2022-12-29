@@ -1,7 +1,9 @@
 import 'package:coffee_api/blocs/coffe_event.dart';
 import 'package:coffee_api/blocs/coffee_bloc.dart';
+import 'package:coffee_api/blocs/login_bloc.dart';
 import 'package:coffee_api/repositories/coffee_remote_data_repository.dart';
 import 'package:coffee_api/screens/home_screen.dart';
+import 'package:coffee_api/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,13 +22,16 @@ class MyApp extends StatelessWidget {
         BlocProvider<CoffeeBloc>(
             create: (BuildContext context) =>
                 CoffeeBloc(CoffeeRemoteDataRepository())..add(GetCoffeEvent())),
+        BlocProvider<LoginBloc>(
+            create: (BuildContext context) =>
+            LoginBloc()),
       ],
       child: MaterialApp(
         title: 'Coffee Api',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: HomeScreen.routeName,
+        initialRoute: LoginScreen.routeName,
         routes: _router,
       ),
     );
@@ -34,5 +39,6 @@ class MyApp extends StatelessWidget {
 
   Map<String, WidgetBuilder> get _router => {
         HomeScreen.routeName: (_) => const HomeScreen(),
+        LoginScreen.routeName: (_) => const LoginScreen(),
       };
 }
