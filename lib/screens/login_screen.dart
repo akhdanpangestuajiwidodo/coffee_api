@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text(
                       "Log In",
                       style: TextStyle(
-                        color: Color(0xFFE8E8EA),
+                        color: Colors.blueGrey,
                         fontSize: 38,
                         fontWeight: FontWeight.bold,
                       ),
@@ -72,16 +72,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               decoration: const InputDecoration(
                                 hintText: 'PIN',
                                 hintStyle: TextStyle(
-                                  color: Color(0xFFE8E8EA),
+                                  color: Colors.blueGrey,
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Color(0xFFE8E8EA),
+                                    color: Colors.blueGrey,
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Color(0xFFE8E8EA),
+                                    color: Colors.blueGrey,
                                   ),
                                 ),
                               ),
