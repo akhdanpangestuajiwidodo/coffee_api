@@ -27,6 +27,7 @@ class _CardCoffeeWidgetState extends State<CardCoffeeWidget> {
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 4.0),
                 Text(MoreText.truncateString(
                     widget.coffee.description, isExpanded)),
                 const SizedBox(
@@ -55,7 +56,7 @@ class _CardCoffeeWidgetState extends State<CardCoffeeWidget> {
                 const SizedBox(
                   height: 8.0,
                 ),
-                Container(
+                SizedBox(
                   height: 20,
                   width: double.infinity,
                   child: ListView.builder(
@@ -75,9 +76,9 @@ class _CardCoffeeWidgetState extends State<CardCoffeeWidget> {
                 ),
               ],
             ),
-            leading: CircleAvatar(
+            leading: widget.coffee.image.contains("https") ? CircleAvatar(
               backgroundImage: NetworkImage(widget.coffee.image),
-            ),
+            ) : const Icon(Icons.image),
           ),
         ],
       ),
